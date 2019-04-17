@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.StringGrid?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxFis.FisGUIController">
+   <top>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleShowTracking" text="Seuranta" />
+            <Button mnemonicParsing="false" onAction="#handleShowHelp" text="Apua" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <Label text="Tulokset" BorderPane.alignment="CENTER" />
+         </top>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <center>
+            <StringGrid fx:id="gridTulokset" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </BorderPane.margin></StringGrid>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="buttonPoistaTulos" mnemonicParsing="false" onAction="#handleDeleteResult" text="Poista tulos">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="buttonLisaaTulos" mnemonicParsing="false" onAction="#handleAddResult" text="Lisää tulos">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+   <left>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <VBox alignment="TOP_CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Haku" />
+                  <TextField fx:id="textSearch" prefWidth="200.0" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </top>
+         <center>
+            <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Urheilijat" />
+                  <ListView fx:id="listUrheilijat" />
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </left>
+   <right>
+      <BorderPane BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <bottom>
+            <Button mnemonicParsing="false" fx:id="buttonLisaaSeurantaan" onAction="#handleAddTracking" text="Lisää seurantaan" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <TextArea fx:id="areaUrheilijaTiedot" editable="false" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </BorderPane.margin>
+            </TextArea>
+         </center>
+         <top>
+            <StackPane fx:id="imageStackUrheilija" BorderPane.alignment="CENTER">
+               <children>
+               		<ProgressIndicator fx:id="imageProgress" layoutX="78.0" layoutY="55.0" />
+                  	<ImageView fx:id="imageUrheilija" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </StackPane>
+         </top>
+      </BorderPane>
+   </right>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

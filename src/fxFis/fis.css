@@ -1,0 +1,8 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.valid {
+	-fx-control-inner-background: white;
+}
+
+.not-valid {
+	-fx-control-inner-background: red;
+}
